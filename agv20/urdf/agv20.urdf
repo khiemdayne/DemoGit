@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot
+
+  name="agv20">
+
+  <link 
+    name = "world">
+  </link>
+  
+    <joint
+      name = "fixed"
+      type = "fixed">
+      <origin
+        xyz="0 0 -0.3"
+        rpy="0 0 0"/>
+      <parent link = "base_link"/>
+      <child link= "world"/>
+    </joint>
+  
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.031044 0.0010149 0.31459"
+        rpy="0 0 0" />
+      <mass
+        value="9.8608" />
+      <inertia
+        ixx="0.15321"
+        ixy="-1.3195E-06"
+        ixz="0.010431"
+        iyy="0.19934"
+        iyz="2.997E-06"
+        izz="0.25801" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="-2.2354E-06 9.754E-06 -0.0095"
+        rpy="0 0 0" />
+      <mass
+        value="2.5857" />
+      <inertia
+        ixx="0.0060319"
+        ixy="-2.9205E-07"
+        ixz="1.2931E-11"
+        iyy="0.0060331"
+        iyz="-3.4505E-11"
+        izz="0.011856" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left"
+    type="continuous">
+    <origin
+      xyz="-0.1805 0.175 -0.192"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="5.6522E-06 8.2577E-06 0.0095"
+        rpy="0 0 0" />
+      <mass
+        value="2.5857" />
+      <inertia
+        ixx="0.0060322"
+        ixy="6.2762E-07"
+        ixz="-1.6588E-11"
+        iyy="0.0060327"
+        iyz="-3.2903E-11"
+        izz="0.011856" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel"
+    type="continuous">
+    <origin
+      xyz="-0.180500000000001 -0.172999999999998 -0.191999999999999"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="huong_trai">
+    <inertial>
+      <origin
+        xyz="-0.0027511 7.5886E-06 -0.01229"
+        rpy="0 0 0" />
+      <mass
+        value="0.0016393" />
+      <inertia
+        ixx="1.6895E-07"
+        ixy="-4.2673E-11"
+        ixz="-3.4979E-08"
+        iyy="1.5352E-07"
+        iyz="9.6402E-11"
+        izz="1.8164E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/huong_trai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.68627 0.68627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/huong_trai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_huong_trai"
+    type="continuous">
+    <origin
+      xyz="0.21687 0.101 -0.222"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="huong_trai" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front_trai">
+    <inertial>
+      <origin
+        xyz="2.7718E-12 2.0356E-13 -0.0085"
+        rpy="0 0 0" />
+      <mass
+        value="0.011363" />
+      <inertia
+        ixx="9.0633E-07"
+        ixy="1.8015E-23"
+        ixz="-1.34E-22"
+        iyy="9.0633E-07"
+        iyz="3.9884E-22"
+        izz="1.432E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/front_trai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/front_trai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joitn_fron"
+    type="continuous">
+    <origin
+      xyz="-0.010023 -0.0084724 -0.026"
+      rpy="1.5708 0 -0.0027583" />
+    <parent
+      link="huong_trai" />
+    <child
+      link="front_trai" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="huong_phai">
+    <inertial>
+      <origin
+        xyz="0.002751 3.123E-05 -0.01229"
+        rpy="0 0 0" />
+      <mass
+        value="0.0016393" />
+      <inertia
+        ixx="1.6895E-07"
+        ixy="1.7501E-10"
+        ixz="3.4977E-08"
+        iyy="1.5352E-07"
+        iyz="3.9715E-10"
+        izz="1.8164E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/huong_phai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.68627 0.68627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/huong_phai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_huong_phai"
+    type="continuous">
+    <origin
+      xyz="0.21687 -0.099 -0.222"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="huong_phai" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front_phai">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -2.7756E-17 -0.0085"
+        rpy="0 0 0" />
+      <mass
+        value="0.011363" />
+      <inertia
+        ixx="9.0633E-07"
+        ixy="3.1073E-23"
+        ixz="1.5137E-22"
+        iyy="9.0633E-07"
+        iyz="1.5523E-22"
+        izz="1.432E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/front_phai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv20/meshes/front_phai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_phai"
+    type="continuous">
+    <origin
+      xyz="0.0099029 0.008613 -0.026"
+      rpy="1.5708 0 -3.1302" />
+    <parent
+      link="huong_phai" />
+    <child
+      link="front_phai" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <!-- lidar scan-->
+    <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.08 0 0.095" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="hokuyo_link"/>
+  </joint>
+
+  <!-- Hokuyo Laser -->
+  <link name="hokuyo_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rrbot_description/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+<!-- hokuyo -->
+  <gazebo reference="hokuyo_link">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose>0.01 0 0.03 0 -0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>640</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.141592</min_angle>
+            <max_angle>3.141592</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.3</min>
+          <max>12.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!--Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. --> 
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+         <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <topicName>/scan</topicName>
+        <frameName>hokuyo_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo> 
+
+  <!--diff  driver plugin -->
+  <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/</robotNamespace>
+        <controlPeriod>0.001</controlPeriod>
+        <legacyModeNS>false</legacyModeNS>
+      </plugin>
+    </gazebo>
+  <!--######################################################################-->
+  <gazebo>
+      <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <legacyMode>false</legacyMode>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>1000.0</updateRate>
+        <leftJoint>left_wheel</leftJoint>
+        <rightJoint>joint_wheel</rightJoint>
+        <wheelSeparation>0.5</wheelSeparation>
+        <wheelDiameter>0.2</wheelDiameter>
+        <wheelTorque>10</wheelTorque>
+        <publishTf>1</publishTf>
+        <odometryFrame>map</odometryFrame>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <robotBaseFrame>base_link</robotBaseFrame>
+        <wheelAcceleration>2.8</wheelAcceleration>
+        <publishWheelJointState>true</publishWheelJointState>
+        <publishWheelTF>false</publishWheelTF>
+        <odometrySource>world</odometrySource>
+        <rosDebugLevel>Debug</rosDebugLevel>
+      </plugin>
+  </gazebo>
+  <!--######################################################################-->
+  <gazebo reference="right_wheel">
+  <mu1 value="1.0"/>
+  <mu2 value="1.0"/>
+  <kp value="10000000.0" />
+  <kd value="1.0" />
+  <fdir1 value="1 0 0"/>
+  </gazebo>
+
+  <gazebo reference="left_wheel">
+  <mu1 value="1.0"/>
+  <mu2 value="1.0"/>
+  <kp value="10000000.0" />
+  <kd value="1.0" />
+  <fdir1 value="1 0 0"/>
+  </gazebo>
+  <!--######################################################################-->
+  <transmission name="left_wheel_trans" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="left_wheel_motor">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="joint_left">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="right_wheel_trans" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="right_wheel_motor">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="joint_wheel">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+ 
+  
+</robot>
